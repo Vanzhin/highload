@@ -13,10 +13,8 @@ class SortService
                 $n = count($array);
                 while ($swapped) {
                     $swapped = false;
-                    for ($i = 0; $i < $n - 1; $i++)
-                    {
-                        if ($array[$i] > $array[$i + 1])
-                        {
+                    for ($i = 0; $i < $n - 1; $i++) {
+                        if ($array[$i] > $array[$i + 1]) {
                             $temp = $array[$i];
                             $array[$i] = $array[$i + 1];
                             $array[$i + 1] = $temp;

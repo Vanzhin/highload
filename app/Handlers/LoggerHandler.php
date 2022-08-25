@@ -23,6 +23,5 @@ class LoggerHandler implements LoggerHandlerInterface
         $time_end = $date->format('Y/m/d H:i:s');
         Log::info('финиш в ' . $time_end);
         Log::debug('использовано памяти: ' . memory_get_usage());
-        dump($array, $sorted);
     }
 }
