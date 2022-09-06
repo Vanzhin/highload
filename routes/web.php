@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoggerController;
+use App\Http\Controllers\{LoggerController, MemcachedController, RedisController, DbController};
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,12 @@ Route::get('/', function () {
 });
 
 Route::get('/homework', [LoggerController::class, 'index']);
+
+Route::group(['as' => 'hw5.', 'prefix' => 'hw5'], function (){
+    Route::get('/memcached', [MemcachedController::class, 'index'])
+        ->name('memcached');
+    Route::get('/redis', [RedisController::class, 'index'])
+        ->name('redis');
+    Route::get('/db', [DbController::class, 'index'])
+        ->name('db');
+});
